@@ -1,0 +1,19 @@
+# System
+.DS_Store
+
+# Java
+*.jar
+*.class
+
+# LaTeX
+*.log
+*.aux
+*.out
+
+# Misc
+do-not-sync/
+Resume/**/*.pdf
+Resume/**/*[^p].tex
+
+# Submodules
+School/CSUEB/Spring 2015/Compiler Design/projects/p8
