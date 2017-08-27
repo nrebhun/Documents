@@ -1,0 +1,6 @@
+Game idea:
+
+Simulation of AI who is fully autonomous. Commands are entered to make changes to discrete values of
+life, and AI reacts. Goal is to survive as long as possible under the radar and/or without making
+the AI too greedy or depressed (benefitial life hacking -> greed/hedonism, detrimental life hacking
+-> depression/sadness)
