@@ -12,11 +12,8 @@
 
 # Misc
 do-not-sync/
-<<<<<<< HEAD
 Resume/**/*.pdf
 Resume/**/*[^p].tex
-=======
->>>>>>> Update .gitignore, add README, add Misc/
 
 # NetBeans
 nbproject/
