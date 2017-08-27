@@ -1,0 +1,40 @@
+CS 4110			Programming project P8
+
+You will write a computer program in C or C++ which compiles programs in the
+language P8 into the symbolic code as discussed in class.
+
+Your program should be designed so that one may easily specify the name of
+the file containing the source text (of the P8 program to be compiled).
+The nicest way is to read the name from the command line; but you may also
+have your compiler issue a prompt to the user asking for the file name.
+If you like you may also allow the user to specify "compiler options", so that
+the user may suppress the listing of the source code, the symbol tables, or the
+symbolic code.  (This may be desirable as you develop your compiler.)
+Your compiler may be designed so that
+  i. all "scanning" is performed before parsing or generating code;
+ ii. if the scanner detects an error, the parser is not called;
+iii. parsing and code generation stop after detecting and reporting any error.
+
+There are examples of source files (*.p8) available on the disk, and you are
+invited to write your own p8 programs as well.
+
+You should turn in (one for each group if group project, else individual):
+
+1. the output produced by your program from the input files primes.p8, and
+   perhaps a few other .p8 programs.
+   This means that you turn in primes.sym and primes.asm produced by your p8.c.
+   (This is how your program is "checked"; the grader sees what output is
+   actually produced by your program.)
+2. a listing of your program.
+   If your program implements the algorithms discussed in class,
+     then
+       you need not prepare extensive documentation
+     else
+       please explain your alternative methods.
+3. the filled out "status" form
+
+Note that if the scanner discovers an error, the parser is not even called;
+and if the parser is called but it finds a bug, there is no .asm file written.
+(At present if there is a .asm file from a previous compilation and the
+parser finds a bug, then this file is undisturbed.  A .asm file is written
+if and only if neither the scanner nor the parser finds something wrong.)

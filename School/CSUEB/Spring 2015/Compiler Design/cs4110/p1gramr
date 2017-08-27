@@ -1,0 +1,62 @@
+				Grammar P1
+
+VN = { <assign> <expr> <term> <primary> <letter> }
+
+VT = { ( ) = + - * / A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+		     a b c d e f g h i j k l m n o p q r s t u v w x y z }
+
+ P =
+
+ 1. <assign>  -> <letter>=<expr>
+
+ 2. <expr>    -> <expr>+<term>
+ 3.		 <expr>-<term>
+ 4.		 <term> 
+
+ 5. <term>    -> <term>*<primary>
+ 6.		 <term>/<primary>
+ 7.		 <primary>
+
+ 8. <primary> -> (<expr>)
+ 9.		 <letter>
+
+10. <letter>  -> A
+11.		 B
+ .
+ .
+35.		 Z
+36.		 a
+37.		 b
+ .
+ .
+61.		 z
+
+
+Start symbol is <assign>
+
+
+______________________________________________________
+
+The assembly language for P1 is as follows.
+
+<AL program>     -> <AL program><AL instruction>
+		    <AL instruction>
+
+<AL instruction> -> lod <addr>
+		    sto <addr>
+		    add <addr>
+		    sub	<addr>
+		    mul	<addr>
+		    div <addr>
+
+<addr>		 -> <letter>
+		    t.
+		    t.+1
+		    t.+2
+		    .
+		    .
+
+
+Note that t. is a symbol for the start of a block of memory used for storage
+of temporary values; using address arithmetic it is not necessary to introduce
+names for other temporaries.

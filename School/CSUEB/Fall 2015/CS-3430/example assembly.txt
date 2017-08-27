@@ -1,0 +1,26 @@
+=======
+?????
+=======
+f0
+mfc1		$t0, $f1
+srl		$t1, $r0, 20
+addi		t1, t1, -1023
+mtc1		t1, f2
+cvt.d.w		f2, f2
+li		t2,0xFFFFF
+and		t0, t0, t2
+lui		t2, 1023<<4
+or		t0, t0, t2
+mtc1		t0, f1
+
+======
+Hello world example
+======
+
+		.delay
+		.code
+main:		la		$a0,hw
+		syscall		$print_string
+		syscall		$exit
+		.data
+hw:		.asciiz "Hello World"

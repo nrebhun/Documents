@@ -1,0 +1,98 @@
+Chapter 5
+=========
+Suppose X and Y are both discrete Random Variables (RV's) defined on the same
+probability space.
+Book: Y1, Y2
+
+Joint Distribution
+---------------------
+PX,Y(x, y) = p(x, y) = P(X=x ^ Y=y)
+This is a function on IR^2
+(x, y) is a point on IR^2
+
+p(x, y) is called the joint prob dist'n function (pdf) OR joint orib mass
+function (pmf)
+Any prob. involving X and Y jointly can be expressed as:
+
+P((X,Y) [in the set] B), where B [subset] IR^2
+P((X,Y) [in the set] B) = [Sum](x,y)[in the set]B ~p(x, y)
+
+SUPPORT of p(x, y):
+{(x,y) [in the set] IR^2 : p(x, y) > 0}
+
+P((X,Y) [in the set] B) = P((X,Y) [in the set] B ^ SUPPORT)
+= [Sum](x,y)[in the set]B ] ~p(x, y)
+
+NOTE:
+[Sum]x [Sum]y ~p(x, y) = 1
+
+Joint CDF:
+F(x,y) = P(X≤x ^ Y≤y)
+FACT: the joint pmf uniquely determines the joint cdf. the converse also holds.
+
+
+
+Marginal Distribution:
+----------------------
+If X and Y have a joint dist'n, then their separate dist'ns are called
+"Marginal Distributions"
+
+The marginal pmf of X: P[sub]X(x) = p(x) = P(X = x)...
+
+*** How can we get this from the pmf?
+*** Simply:
+= [Sum]y ~p(x,y)
+
+The marginal pmf of Y:
+p[sub]Y(y) = p(y)...
+
+The joint pmf uniquely determines p(x) and p(y), however the converse is
+false.
+
+in other words you can have many different joint dist'n with a single marginal
+dist'n, but a joint dist'n only has one marginal dist'n
+
+Recall Independence: A and B: 
+P(A|B) = P(A)
+P(B|A) = P(B)
+
+
+Def. 
+X and Y are *independent* discrete RV's if
+
+p(x,y) = p(x) • p(y), for all x and y
+
+NOTE: if we are given p(x) and p(y) and we are told that X and Y are
+independent, then we can determine the joint pdf(pmf) by simply multiplying.
+
+
+Conditional Distribution
+------------------------
+Recall: P(A|B) = P(A^B) / P(B) <- !=0
+Def: the conditional pmf of X given Y=y is the function:
+P[sub]X|Y (x|y) = p(x|y)
+
+
+
+============
+
+Linearity of expectation for Variance:
+Constant-squared * v(X)
+
+
+4.96
+k = 1/((B^a) * G(a))
+
+Write down binomial!!
+Write down Chebyshev’s!!
+
+k-th moment of gamma:
+E(Yk ) = Γ(α) 
+
+Gamma:
+Mean = alpha * Beta
+Variance = alpha * Beta^2
+
+Chi-square:
+Mean = v = 2 * alpha
+Variance = 2 * v

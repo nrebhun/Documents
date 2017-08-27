@@ -1,0 +1,61 @@
+				 Grammar for p8
+
+
+	1  <program>		   -> { <declaration list> <statement list> }
+	2  <declaration list>	   -> <declaration list> <declaration>
+	3			   -> <declaration>
+	4  <declaration>	   -> <type> <variable list> ;
+  5 -   6  <type>		   -> float | int
+  7 -   8  <variable list>	   -> <variable list> , <variable> | <variable>
+  9 -  10  <statement list>	   -> <statement list> <statement> | <statement>
+       11  <statement>		   -> <compound statement>
+       12			   -> <conditional statement>
+       13			   -> <while statement>
+       14			   -> <repeat statement>
+       15			   -> <assignment statement>
+       16			   -> <i/o statement>
+       17 			   -> <break statement>
+       18			   -> <return statement>
+       19  <compound statement>	   -> { <statement list> }
+ 20 -  21  <conditional statement> -> <if statement> | <if/else statement>
+       22  <if statement>	   -> <if clause> <statement>
+       23  <if/else statement>	   -> <if statement> else <statement>
+       24  <while statement>	   -> <while clause> <statement>
+       25  <repeat statement>	   -> <repeat clause> <statement>
+       26  <if clause>		   -> if <condition>
+ 27 -  28  <while clause>	   -> while ( ) | while <condition>
+       29  <repeat clause>	   -> repeat ( <expression> )
+       30  <assignment statement>  -> <variable> = <expression> ;
+ 31 -  32  <i/o statement>	   -> <put> , <expr.> ; | output <expr.> ;
+       33			   -> <get> ;	
+       34  <break statement>	   -> break ;
+       35  <return statement>	   -> return ;
+ 36 -  37  <get>		   -> <get> , <var.> | input <var.>
+ 38 -  39  <put>		   -> <put> , <expr.> | output <expr.>
+       40  <condition>		   -> ( <expr.> <boolean relation> <expr.> )
+ 41 -  44  <boolean relation>	   -> < | <= | == | !=
+       45  <expression>		   -> <expression> + <term>
+       46			   -> <expression> - <term>
+       47			   -> - <term>
+       48			   -> <term>
+       49  <term>		   -> <term> * <primary>
+       50			   -> <term> / <primary>
+       51			   -> <primary>
+ 52 -  54  <primary>		   -> ( <expression> ) | <variable> | <constant>
+...............................................................................
+       55  <variable>		   -> <variable> <letter>
+       56			   -> <variable> <digit>
+       57			   -> <letter>
+ 58 -  61  <constant>		   -> - <float> | - <int> | <float> | <int>
+       62  <float>		   -> <int> . <int> <e> - <int>
+       63			   -> <int> . <int> <e> <int>
+       64			   -> <int> <e> - <int>
+       65			   -> <int> <e> <int>
+       66			   -> <int> . <int>
+ 67 -  68  <e>			   -> e | E       
+ 69 -  70  <int>		   -> <int> <digit> | <digit>
+ 71 - 122  <letter>		   -> A | B | ... | Z | a | b | ... | z
+123 - 132  <digit>		   -> 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+
+	Comments begin with "//" and continue to the end of the line.
+	The last 78 productions are taken care of in the scanner.

@@ -1,0 +1,16 @@
+1)  Detecting EX/MEM data hazard
+
+    if:     EX/MEM.RegWrite == 1 && EX/MEM.rd != 0 && EX/MEM.rd == ID/EX:rs
+    then:   forwardA = 2 (10)
+
+    if:     EX/MEM.RegWrite == 1 && EX/MEM/rd != 0 && EX/MEM.rd == ID/EX:rt
+    then:   forwardB = 2
+---------------------
+2)  add $1, $2, $3
+    add $1, $1, $4
+    sub $5, $5, $1
+
+    Detecting MEM/WB hazard
+
+    if:     MB/WB.RegWrite == 1 && MEM/WB.rd != 0 && MEM/WB.rd == ID/EX.rs &&
+            EX/MEM.rd != ID

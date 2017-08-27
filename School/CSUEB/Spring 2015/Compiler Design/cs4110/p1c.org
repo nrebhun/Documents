@@ -1,0 +1,162 @@
+/*	p1c.org		1990 jan 09	last modified 1996 sep 18
+ *
+ *	Shows organization of Dan's p1.c.
+ */
+
+	int eos,err,l,ln=0,nextj=0,ok,out;
+	char ext[]={63, 63, 63, 61, 43, 45, 42, 47,
+		    65, 66, 67, 68, 69, 70, 71, 72,
+		    73, 74, 75, 76, 77, 78, 79, 80,
+		    81, 82, 83, 84, 85, 86, 87, 88,
+		    89, 90, 97, 98, 99,100,101,102,
+		   103,104,105,106,107,108,109,110,
+		   111,112,113,114,115,116,117,118,
+		   119,120,121,122},
+		inform[241],rpn[241],str[241],stak[80];
+
+int
+main( void )
+{
+	int atend( void );
+	void deleteblanks( void ),
+		drawline( void ),
+		echoprint( void ),
+		gencode( void ),
+		getstring( void ),
+		internalize( void ),
+		makerpn( void ),
+		parse( void );
+
+	while ( 1 ) {
+		getstring();
+		echoprint();
+		deleteblanks();
+		if ( atend() ) {
+			break;
+		} else {
+			internalize();
+			if ( !err ) {
+				parse();
+				if ( !err ) {
+					makerpn();
+					gencode();
+				}
+			}
+		}
+		drawline();
+	}
+	return( 0 );
+}
+int
+atend( void )
+{
+	return( (l == 3) && (stricmp( str,"end" ) == 0) );
+}
+void
+deleteblanks( void )
+{
+	void ouch( int );
+
+	char *p,*q;
+}
+
+
+
+
+
+void
+drawline( void )
+{
+	void ouch( int );
+
+	int i;
+}
+void
+echoprint( void )
+{
+	void ouch( int );
+}
+void
+emit( char a,char n )
+{
+	void ouch( int );
+
+	static char *op[]={"***","lod","sto","***","add","sub","mul","div"};
+}
+void
+gencode( void )
+{
+	void emit( char,char );
+
+	char a,j,lop,n1,n2,*p,*t;
+}
+void
+getstring( void )
+{
+}
+void
+internalize( void )
+{
+	void ouch( int);
+
+	int i,j;
+	static char inter[]={ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+			      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+			      0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 6, 4, 0, 5, 0, 7,
+			      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0,
+			      0, 8, 9,10,11,12,13,14,15,16,17,18,19,20,21,22,
+			     23,24,25,26,27,28,29,30,31,32,33, 0, 0, 0, 0, 0,
+			      0,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,
+			     49,50,51,52,53,54,55,56,57,58,59, 0, 0, 0, 0, 0};
+	char ch,code,k,*p,*q;
+}
+void
+makerpn( void )
+{
+	void ouch( int );
+
+	static char pr[]={0,0,1,2,3,3,4,4};
+	char n,*p,*r,s,*t;
+}
+void
+ouch( int c )
+{
+	putchar( c );
+}
+
+
+
+
+
+
+
+void
+parse( void )
+{
+	void reduce( char *,int * );
+
+	int errn,t;
+	static char c1[13][9]={{ 1,11,11,11,11,11,11, 1, 0},
+			       {11, 2,11, 2, 2, 2, 2,11, 2},
+			       { 1,11,10,10,10,10,10, 1, 0},
+			       { 1,11,10,10,10,10,10, 1, 0},
+			       { 1,11,10,10,10,10,10, 1, 0},
+			       { 1,11,10,10,10,10,10, 1, 0},
+			       { 1,11,10,10,10,10,10, 1, 0},
+			       {11, 2, 1, 2, 2, 2, 2,12, 2},
+			       {11,11,13,13,13,13,13, 1, 0},
+			       {11,11,14, 0, 0, 0, 0, 0, 2},
+			       {11, 1,14, 1, 1, 0, 0, 0, 2},
+			       {11, 2,14, 2, 2, 1, 1, 0, 2},
+			       {11, 2,14, 2, 2, 2, 2, 0, 2}},
+		*ermsg[]={": operators are adjacent",
+			  ": parenthesis is misplaced",
+			  ": operands are adjacent",
+			  ": must begin with letter",
+			  ": second equal sign encountered"};
+	char a,*p,s;
+}
+void
+reduce( char *s,int *t )
+{
+}

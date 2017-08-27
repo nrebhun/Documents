@@ -1,0 +1,23 @@
+		Codes for p8 instructions and registers
+
+add	 0		fadd	  21		eax	0
+call	 1		faddp	  22		ebx	1
+cdq	 2		fchs	  23		ecx	2
+cmp	 3		fcom	  24		edx	3
+cwd	 4		fcomp	  25		esi	4
+idiv	 5		fcompp	  26		edi	5
+imul	 6		fdiv	  27
+jb	 7		fdivp	  28
+jbe	 8		fdivr	  29
+je	 9		fdivrp	  30
+jl	10		fld	  31
+jle	11		fmul	  32
+jmp	12		fmulp	  33
+jne	13		fstp	  34
+mov	14		fstsw\tax 35
+neg	15		fsub	  36
+pop	16		fsubp	  37
+push	17		fsubr	  38
+sahf	18		fsubrp	  39
+sub	19		fxch	  40
+xchg	20

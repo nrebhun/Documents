@@ -1,0 +1,93 @@
+Great formula:
+P(X>x) = q^x
+
+Intuitive proof:
+P(X≤x) = 1 - P(X>x) = 1 - q^x
+
+
+2.138
+USE TPL to get P = probability of winning = 244/491
+
+>> 7/23/2015
+-------
+Have a finite collection of objects
+some are labeled Success (S)
+the others are labelled Failure (F)
+N = total # of objects
+r = # of S
+(N - r) = # of F
+n = # of objects we sample from N objects **WITHOUT** replacement
+
+Let X = # of S in sample of n objects
+X is called **hypergeometric**
+Parameters: N, r, n
+
+If we change to **WITH** replacement, then X is binomial with n trials and
+p = r/n = the fraction or proportion of S in _______?
+
+pmf
+---
+Sample Space of combinations
+#Ω = NCn
+
+Consider a 2-stage job
+P(X = x) = (#A / #Ω)
+
+Stage 1:
+Choose x S's from the r S's:
+# = rCx
+
+Stage 2:
+Choose n-x F's from the N-r F's:
+# = (N-r)C(n-x)
+
+P(X = x) = ( rCx * (N-r)C(n-x) ) / (NCn)
+
+MEAN = np = n(r/N)
+VARIANCE = (npq) * ( (N-n) / (N - 1) ) ≤ npq
+========
+
+POISSON
+------
+Range: 0,1,2,3,...
+Parameters: λ
+
+pmf = p(x) = ( (e^ (-lambda)) * ((lambda^x) ) / (x!)
+
+Suppose X is binomial (n,p)
+If n is "large" and p is "small"
+then X is approximately Poisson, where LAMBDA = the mean of X = np
+
+This is justified by the Poisson Limit Theorem
+
+Rule of thumb:
+n ≥ 100
+and p is so small that LAMBDA = np ≤ 10
+
+
+>> 7/30/2015
+Section 3.11: Chebyshev's Inequality
+---------------------
+Suppose X has a finite mean and finite variance
+For any positive real number "K"
+
+P(|X-[mean]| < K[sigma]) ≥ 1 - (1/(K^2))
+1 - (1/(K^2)) is Chebyshev's LOWER bound for the above probability. It is only
+useful when K > 1
+
+P(|X-[mean]| < K[sigma]) is the probability that X falls within K[sigma] of
+[mean]
+=====================
+
+Continuous Distribution
+
+The Cumulative Distribution Function (CDF)
+of the RV X is F(x) = P(X≤x), for every real number x
+
+
+>> 8/04/2015
+-------
+Continuous Probability
+`
+
+

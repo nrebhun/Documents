@@ -15,5 +15,19 @@ do-not-sync/
 Resume/**/*.pdf
 Resume/**/*[^p].tex
 
+# NetBeans
+nbproject/
+.netbeans*
+manifest.mf
+Manifest
+build.xml
+
 # Submodules
-School/CSUEB/Spring 2015/Compiler Design/projects/p8
+School/CSUEB/Spring\ 2015/Compiler\ Design/projects/p8/
+
+# Xcode
+build/
+resources_macosx/
+*.1
+*.app
+*.xcodeproj

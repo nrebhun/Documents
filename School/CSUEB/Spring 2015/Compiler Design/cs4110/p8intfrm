@@ -1,0 +1,61 @@
+				p8 internal forms
+
+	symbol			internal form
+
+	<variable>		100 - 199	100 - 149: float; 150 - 199: int
+	<constant>		200 - 299	200 - 249: float; 250 - 299: int
+
+	float			300
+	int			301
+	input			302
+	output			303
+	return			304
+	break			305
+	while			306
+	if			307
+	else			308
+	repeat			309
+
+	{			350
+	}			351
+	(			352
+	)			353
+	=			354
+	+			355
+	-			356
+	*			357
+	/			358
+	<			359
+	<=			360
+	==			361
+	!=			362
+	,			363
+	;			364
+
+	<program>		400
+	<declaration list>	401
+	<declaration>		402
+	<type>			403
+	<variable list>		404
+	<statement list>	405
+	<statement>		406
+	<compound statement>	407
+	<conditional statement>	408
+	<if statement>		409
+	<if/else statement>	410
+	<while statement>	411
+	<repeat statement>	412
+	<if clause>		413
+	<while clause>		414
+	<repeat clause>		415
+	<assignment statement>	416
+	<i/o statement>		417
+	<break statement>	418
+	<return statement>	419
+	<get>			420
+	<put>			421
+	<condition>		422
+	<boolean relation>	423
+	<expression>		424
+	<term>			425
+	<primary>		426

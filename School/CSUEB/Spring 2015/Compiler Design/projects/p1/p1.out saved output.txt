@@ -1,0 +1,676 @@
+NRMBP:p1 nrebhun$ ls
+data1	p1.cpp	p1.out
+NRMBP:p1 nrebhun$ clear && gcc p1.cpp -o p1.out && ./p1.out data1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+p1.cpp:93:26: warning: conversion from string literal to 'char *' is deprecated
+      [-Wc++11-compat-deprecated-writable-strings]
+    static char *op[] = {"***","lod","sto","***","add","sub","mul","div"};
+                         ^
+p1.cpp:93:32: warning: conversion from string literal to 'char *' is deprecated
+      [-Wc++11-compat-deprecated-writable-strings]
+    static char *op[] = {"***","lod","sto","***","add","sub","mul","div"};
+                               ^
+p1.cpp:93:38: warning: conversion from string literal to 'char *' is deprecated
+      [-Wc++11-compat-deprecated-writable-strings]
+    static char *op[] = {"***","lod","sto","***","add","sub","mul","div"};
+                                     ^
+p1.cpp:93:44: warning: conversion from string literal to 'char *' is deprecated
+      [-Wc++11-compat-deprecated-writable-strings]
+    static char *op[] = {"***","lod","sto","***","add","sub","mul","div"};
+                                           ^
+p1.cpp:93:50: warning: conversion from string literal to 'char *' is deprecated
+      [-Wc++11-compat-deprecated-writable-strings]
+    static char *op[] = {"***","lod","sto","***","add","sub","mul","div"};
+                                                 ^
+p1.cpp:93:56: warning: conversion from string literal to 'char *' is deprecated
+      [-Wc++11-compat-deprecated-writable-strings]
+    static char *op[] = {"***","lod","sto","***","add","sub","mul","div"};
+                                                       ^
+p1.cpp:93:62: warning: conversion from string literal to 'char *' is deprecated
+      [-Wc++11-compat-deprecated-writable-strings]
+    static char *op[] = {"***","lod","sto","***","add","sub","mul","div"};
+                                                             ^
+p1.cpp:93:68: warning: conversion from string literal to 'char *' is deprecated
+      [-Wc++11-compat-deprecated-writable-strings]
+    static char *op[] = {"***","lod","sto","***","add","sub","mul","div"};
+                                                                   ^
+p1.cpp:295:9: warning: conversion from string literal to 'char *' is deprecated
+      [-Wc++11-compat-deprecated-writable-strings]
+        ": operators are adjacent",
+        ^
+p1.cpp:296:9: warning: conversion from string literal to 'char *' is deprecated
+      [-Wc++11-compat-deprecated-writable-strings]
+        ": parenthesis is misplaced",
+        ^
+p1.cpp:297:9: warning: conversion from string literal to 'char *' is deprecated
+      [-Wc++11-compat-deprecated-writable-strings]
+        ": operands are adjacent",
+        ^
+p1.cpp:298:9: warning: conversion from string literal to 'char *' is deprecated
+      [-Wc++11-compat-deprecated-writable-strings]
+        ": must begin with letter",
+        ^
+p1.cpp:299:9: warning: conversion from string literal to 'char *' is deprecated
+      [-Wc++11-compat-deprecated-writable-strings]
+        ": second equal sign encountered"
+        ^
+13 warnings generated.
+Undefined symbols for architecture x86_64:
+  "std::__1::locale::has_facet(std::__1::locale::id&) const", referenced from:
+      std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf() in p1-f4058c.o
+  "std::__1::locale::use_facet(std::__1::locale::id&) const", referenced from:
+      getstring() in p1-f4058c.o
+      std::__1::basic_ostream<char, std::__1::char_traits<char> >& std::__1::endl<char, std::__1::char_traits<char> >(std::__1::basic_ostream<char, std::__1::char_traits<char> >&) in p1-f4058c.o
+      std::__1::basic_ostream<char, std::__1::char_traits<char> >& std::__1::__put_character_sequence<char, std::__1::char_traits<char> >(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, char const*, unsigned long) in p1-f4058c.o
+      std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf() in p1-f4058c.o
+      std::__1::basic_filebuf<char, std::__1::char_traits<char> >::imbue(std::__1::locale const&) in p1-f4058c.o
+  "std::__1::ios_base::getloc() const", referenced from:
+      getstring() in p1-f4058c.o
+      std::__1::basic_ostream<char, std::__1::char_traits<char> >& std::__1::endl<char, std::__1::char_traits<char> >(std::__1::basic_ostream<char, std::__1::char_traits<char> >&) in p1-f4058c.o
+      std::__1::basic_ostream<char, std::__1::char_traits<char> >& std::__1::__put_character_sequence<char, std::__1::char_traits<char> >(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, char const*, unsigned long) in p1-f4058c.o
+  "std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__init(unsigned long, char)", referenced from:
+      std::__1::ostreambuf_iterator<char, std::__1::char_traits<char> > std::__1::__pad_and_output<char, std::__1::char_traits<char> >(std::__1::ostreambuf_iterator<char, std::__1::char_traits<char> >, char const*, char const*, char const*, std::__1::ios_base&, char) in p1-f4058c.o
+  "std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::~basic_string()", referenced from:
+      std::__1::ostreambuf_iterator<char, std::__1::char_traits<char> > std::__1::__pad_and_output<char, std::__1::char_traits<char> >(std::__1::ostreambuf_iterator<char, std::__1::char_traits<char> >, char const*, char const*, char const*, std::__1::ios_base&, char) in p1-f4058c.o
+  "std::__1::basic_istream<char, std::__1::char_traits<char> >::getline(char*, long, char)", referenced from:
+      getstring() in p1-f4058c.o
+  "std::__1::basic_istream<char, std::__1::char_traits<char> >::~basic_istream()", referenced from:
+      construction vtable for std::__1::basic_istream<char, std::__1::char_traits<char> >-in-std::__1::basic_fstream<char, std::__1::char_traits<char> > in p1-f4058c.o
+  "std::__1::basic_istream<char, std::__1::char_traits<char> >::~basic_istream()", referenced from:
+      construction vtable for std::__1::basic_istream<char, std::__1::char_traits<char> >-in-std::__1::basic_fstream<char, std::__1::char_traits<char> > in p1-f4058c.o
+  "std::__1::basic_ostream<char, std::__1::char_traits<char> >::put(char)", referenced from:
+      std::__1::basic_ostream<char, std::__1::char_traits<char> >& std::__1::endl<char, std::__1::char_traits<char> >(std::__1::basic_ostream<char, std::__1::char_traits<char> >&) in p1-f4058c.o
+  "std::__1::basic_ostream<char, std::__1::char_traits<char> >::flush()", referenced from:
+      std::__1::basic_ostream<char, std::__1::char_traits<char> >& std::__1::endl<char, std::__1::char_traits<char> >(std::__1::basic_ostream<char, std::__1::char_traits<char> >&) in p1-f4058c.o
+  "std::__1::basic_ostream<char, std::__1::char_traits<char> >::sentry::sentry(std::__1::basic_ostream<char, std::__1::char_traits<char> >&)", referenced from:
+      std::__1::basic_ostream<char, std::__1::char_traits<char> >& std::__1::__put_character_sequence<char, std::__1::char_traits<char> >(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, char const*, unsigned long) in p1-f4058c.o
+  "std::__1::basic_ostream<char, std::__1::char_traits<char> >::sentry::~sentry()", referenced from:
+      std::__1::basic_ostream<char, std::__1::char_traits<char> >& std::__1::__put_character_sequence<char, std::__1::char_traits<char> >(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, char const*, unsigned long) in p1-f4058c.o
+  "std::__1::basic_ostream<char, std::__1::char_traits<char> >::~basic_ostream()", referenced from:
+      construction vtable for std::__1::basic_ostream<char, std::__1::char_traits<char> >-in-std::__1::basic_fstream<char, std::__1::char_traits<char> > in p1-f4058c.o
+  "std::__1::basic_ostream<char, std::__1::char_traits<char> >::~basic_ostream()", referenced from:
+      construction vtable for std::__1::basic_ostream<char, std::__1::char_traits<char> >-in-std::__1::basic_fstream<char, std::__1::char_traits<char> > in p1-f4058c.o
+  "std::__1::basic_ostream<char, std::__1::char_traits<char> >::operator<<(int)", referenced from:
+      emit(char, char) in p1-f4058c.o
+      internalize() in p1-f4058c.o
+      parse() in p1-f4058c.o
+  "std::__1::basic_iostream<char, std::__1::char_traits<char> >::~basic_iostream()", referenced from:
+      construction vtable for std::__1::basic_iostream<char, std::__1::char_traits<char> >-in-std::__1::basic_fstream<char, std::__1::char_traits<char> > in p1-f4058c.o
+  "std::__1::basic_iostream<char, std::__1::char_traits<char> >::~basic_iostream()", referenced from:
+      construction vtable for std::__1::basic_iostream<char, std::__1::char_traits<char> >-in-std::__1::basic_fstream<char, std::__1::char_traits<char> > in p1-f4058c.o
+  "std::__1::basic_iostream<char, std::__1::char_traits<char> >::~basic_iostream()", referenced from:
+      ___cxx_global_var_init in p1-f4058c.o
+      std::__1::basic_fstream<char, std::__1::char_traits<char> >::~basic_fstream() in p1-f4058c.o
+  "std::__1::basic_streambuf<char, std::__1::char_traits<char> >::uflow()", referenced from:
+      vtable for std::__1::basic_filebuf<char, std::__1::char_traits<char> > in p1-f4058c.o
+  "std::__1::basic_streambuf<char, std::__1::char_traits<char> >::xsgetn(char*, long)", referenced from:
+      vtable for std::__1::basic_filebuf<char, std::__1::char_traits<char> > in p1-f4058c.o
+  "std::__1::basic_streambuf<char, std::__1::char_traits<char> >::xsputn(char const*, long)", referenced from:
+      vtable for std::__1::basic_filebuf<char, std::__1::char_traits<char> > in p1-f4058c.o
+  "std::__1::basic_streambuf<char, std::__1::char_traits<char> >::showmanyc()", referenced from:
+      vtable for std::__1::basic_filebuf<char, std::__1::char_traits<char> > in p1-f4058c.o
+  "std::__1::basic_streambuf<char, std::__1::char_traits<char> >::basic_streambuf()", referenced from:
+      std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf() in p1-f4058c.o
+  "std::__1::basic_streambuf<char, std::__1::char_traits<char> >::~basic_streambuf()", referenced from:
+      std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf() in p1-f4058c.o
+      std::__1::basic_filebuf<char, std::__1::char_traits<char> >::~basic_filebuf() in p1-f4058c.o
+  "std::__1::cin", referenced from:
+      getstring() in p1-f4058c.o
+  "std::__1::cout", referenced from:
+      deleteblanks() in p1-f4058c.o
+      drawline() in p1-f4058c.o
+      echoprint() in p1-f4058c.o
+      emit(char, char) in p1-f4058c.o
+      gencode() in p1-f4058c.o
+      getstring() in p1-f4058c.o
+      internalize() in p1-f4058c.o
+      ...
+  "std::__1::ctype<char>::id", referenced from:
+      getstring() in p1-f4058c.o
+      std::__1::basic_ostream<char, std::__1::char_traits<char> >& std::__1::endl<char, std::__1::char_traits<char> >(std::__1::basic_ostream<char, std::__1::char_traits<char> >&) in p1-f4058c.o
+      std::__1::basic_ostream<char, std::__1::char_traits<char> >& std::__1::__put_character_sequence<char, std::__1::char_traits<char> >(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, char const*, unsigned long) in p1-f4058c.o
+  "std::__1::locale::locale(std::__1::locale const&)", referenced from:
+      std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf() in p1-f4058c.o
+  "std::__1::locale::~locale()", referenced from:
+      getstring() in p1-f4058c.o
+      std::__1::basic_ostream<char, std::__1::char_traits<char> >& std::__1::endl<char, std::__1::char_traits<char> >(std::__1::basic_ostream<char, std::__1::char_traits<char> >&) in p1-f4058c.o
+      std::__1::basic_ostream<char, std::__1::char_traits<char> >& std::__1::__put_character_sequence<char, std::__1::char_traits<char> >(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, char const*, unsigned long) in p1-f4058c.o
+      std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf() in p1-f4058c.o
+  "std::__1::codecvt<char, char, __mbstate_t>::id", referenced from:
+      std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf() in p1-f4058c.o
+      std::__1::basic_filebuf<char, std::__1::char_traits<char> >::imbue(std::__1::locale const&) in p1-f4058c.o
+  "std::__1::ios_base::__set_badbit_and_consider_rethrow()", referenced from:
+      std::__1::basic_ostream<char, std::__1::char_traits<char> >& std::__1::__put_character_sequence<char, std::__1::char_traits<char> >(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, char const*, unsigned long) in p1-f4058c.o
+  "std::__1::ios_base::init(void*)", referenced from:
+      ___cxx_global_var_init in p1-f4058c.o
+  "std::__1::ios_base::clear(unsigned int)", referenced from:
+      _main in p1-f4058c.o
+      std::__1::basic_fstream<char, std::__1::char_traits<char> >::open(char const*, unsigned int) in p1-f4058c.o
+      std::__1::basic_ostream<char, std::__1::char_traits<char> >& std::__1::__put_character_sequence<char, std::__1::char_traits<char> >(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, char const*, unsigned long) in p1-f4058c.o
+  "std::__1::basic_ios<char, std::__1::char_traits<char> >::~basic_ios()", referenced from:
+      ___cxx_global_var_init in p1-f4058c.o
+      std::__1::basic_fstream<char, std::__1::char_traits<char> >::~basic_fstream() in p1-f4058c.o
+  "std::bad_cast::bad_cast()", referenced from:
+      std::__1::basic_filebuf<char, std::__1::char_traits<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int) in p1-f4058c.o
+      std::__1::basic_filebuf<char, std::__1::char_traits<char> >::sync() in p1-f4058c.o
+      std::__1::basic_filebuf<char, std::__1::char_traits<char> >::underflow() in p1-f4058c.o
+      std::__1::basic_filebuf<char, std::__1::char_traits<char> >::overflow(int) in p1-f4058c.o
+  "std::bad_cast::~bad_cast()", referenced from:
+      std::__1::basic_filebuf<char, std::__1::char_traits<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int) in p1-f4058c.o
+      std::__1::basic_filebuf<char, std::__1::char_traits<char> >::sync() in p1-f4058c.o
+      std::__1::basic_filebuf<char, std::__1::char_traits<char> >::underflow() in p1-f4058c.o
+      std::__1::basic_filebuf<char, std::__1::char_traits<char> >::overflow(int) in p1-f4058c.o
+  "std::terminate()", referenced from:
+      ___clang_call_terminate in p1-f4058c.o
+  "typeinfo for std::__1::basic_istream<char, std::__1::char_traits<char> >", referenced from:
+      construction vtable for std::__1::basic_istream<char, std::__1::char_traits<char> >-in-std::__1::basic_fstream<char, std::__1::char_traits<char> > in p1-f4058c.o
+  "typeinfo for std::__1::basic_ostream<char, std::__1::char_traits<char> >", referenced from:
+      construction vtable for std::__1::basic_ostream<char, std::__1::char_traits<char> >-in-std::__1::basic_fstream<char, std::__1::char_traits<char> > in p1-f4058c.o
+  "typeinfo for std::__1::basic_iostream<char, std::__1::char_traits<char> >", referenced from:
+      construction vtable for std::__1::basic_iostream<char, std::__1::char_traits<char> >-in-std::__1::basic_fstream<char, std::__1::char_traits<char> > in p1-f4058c.o
+      typeinfo for std::__1::basic_fstream<char, std::__1::char_traits<char> > in p1-f4058c.o
+  "typeinfo for std::__1::basic_streambuf<char, std::__1::char_traits<char> >", referenced from:
+      typeinfo for std::__1::basic_filebuf<char, std::__1::char_traits<char> > in p1-f4058c.o
+  "typeinfo for std::bad_cast", referenced from:
+      std::__1::basic_filebuf<char, std::__1::char_traits<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int) in p1-f4058c.o
+      std::__1::basic_filebuf<char, std::__1::char_traits<char> >::sync() in p1-f4058c.o
+      std::__1::basic_filebuf<char, std::__1::char_traits<char> >::underflow() in p1-f4058c.o
+      std::__1::basic_filebuf<char, std::__1::char_traits<char> >::overflow(int) in p1-f4058c.o
+  "vtable for __cxxabiv1::__si_class_type_info", referenced from:
+      typeinfo for std::__1::basic_fstream<char, std::__1::char_traits<char> > in p1-f4058c.o
+      typeinfo for std::__1::basic_filebuf<char, std::__1::char_traits<char> > in p1-f4058c.o
+  NOTE: a missing vtable usually means the first non-inline virtual member function has no definition.
+  "vtable for std::__1::ios_base", referenced from:
+      ___cxx_global_var_init in p1-f4058c.o
+  NOTE: a missing vtable usually means the first non-inline virtual member function has no definition.
+  "vtable for std::__1::basic_ios<char, std::__1::char_traits<char> >", referenced from:
+      ___cxx_global_var_init in p1-f4058c.o
+  NOTE: a missing vtable usually means the first non-inline virtual member function has no definition.
+  "non-virtual thunk to std::__1::basic_iostream<char, std::__1::char_traits<char> >::~basic_iostream()", referenced from:
+      construction vtable for std::__1::basic_iostream<char, std::__1::char_traits<char> >-in-std::__1::basic_fstream<char, std::__1::char_traits<char> > in p1-f4058c.o
+  "non-virtual thunk to std::__1::basic_iostream<char, std::__1::char_traits<char> >::~basic_iostream()", referenced from:
+      construction vtable for std::__1::basic_iostream<char, std::__1::char_traits<char> >-in-std::__1::basic_fstream<char, std::__1::char_traits<char> > in p1-f4058c.o
+  "non-virtual thunk to std::__1::basic_istream<char, std::__1::char_traits<char> >::~basic_istream()", referenced from:
+      construction vtable for std::__1::basic_istream<char, std::__1::char_traits<char> >-in-std::__1::basic_fstream<char, std::__1::char_traits<char> > in p1-f4058c.o
+  "non-virtual thunk to std::__1::basic_istream<char, std::__1::char_traits<char> >::~basic_istream()", referenced from:
+      construction vtable for std::__1::basic_istream<char, std::__1::char_traits<char> >-in-std::__1::basic_fstream<char, std::__1::char_traits<char> > in p1-f4058c.o
+  "non-virtual thunk to std::__1::basic_ostream<char, std::__1::char_traits<char> >::~basic_ostream()", referenced from:
+      construction vtable for std::__1::basic_ostream<char, std::__1::char_traits<char> >-in-std::__1::basic_fstream<char, std::__1::char_traits<char> > in p1-f4058c.o
+  "non-virtual thunk to std::__1::basic_ostream<char, std::__1::char_traits<char> >::~basic_ostream()", referenced from:
+      construction vtable for std::__1::basic_ostream<char, std::__1::char_traits<char> >-in-std::__1::basic_fstream<char, std::__1::char_traits<char> > in p1-f4058c.o
+  "non-virtual thunk to std::__1::basic_iostream<char, std::__1::char_traits<char> >::~basic_iostream()", referenced from:
+      construction vtable for std::__1::basic_iostream<char, std::__1::char_traits<char> >-in-std::__1::basic_fstream<char, std::__1::char_traits<char> > in p1-f4058c.o
+  "non-virtual thunk to std::__1::basic_iostream<char, std::__1::char_traits<char> >::~basic_iostream()", referenced from:
+      construction vtable for std::__1::basic_iostream<char, std::__1::char_traits<char> >-in-std::__1::basic_fstream<char, std::__1::char_traits<char> > in p1-f4058c.o
+  "operator delete[](void*)", referenced from:
+      std::__1::basic_filebuf<char, std::__1::char_traits<char> >::imbue(std::__1::locale const&) in p1-f4058c.o
+      std::__1::basic_filebuf<char, std::__1::char_traits<char> >::setbuf(char*, long) in p1-f4058c.o
+      std::__1::basic_filebuf<char, std::__1::char_traits<char> >::~basic_filebuf() in p1-f4058c.o
+  "operator delete(void*)", referenced from:
+      std::__1::basic_fstream<char, std::__1::char_traits<char> >::~basic_fstream() in p1-f4058c.o
+      std::__1::basic_filebuf<char, std::__1::char_traits<char> >::~basic_filebuf() in p1-f4058c.o
+  "operator new[](unsigned long)", referenced from:
+      std::__1::basic_filebuf<char, std::__1::char_traits<char> >::imbue(std::__1::locale const&) in p1-f4058c.o
+      std::__1::basic_filebuf<char, std::__1::char_traits<char> >::setbuf(char*, long) in p1-f4058c.o
+  "___cxa_allocate_exception", referenced from:
+      std::__1::basic_filebuf<char, std::__1::char_traits<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int) in p1-f4058c.o
+      std::__1::basic_filebuf<char, std::__1::char_traits<char> >::sync() in p1-f4058c.o
+      std::__1::basic_filebuf<char, std::__1::char_traits<char> >::underflow() in p1-f4058c.o
+      std::__1::basic_filebuf<char, std::__1::char_traits<char> >::overflow(int) in p1-f4058c.o
+  "___cxa_begin_catch", referenced from:
+      ___clang_call_terminate in p1-f4058c.o
+      std::__1::basic_ostream<char, std::__1::char_traits<char> >& std::__1::__put_character_sequence<char, std::__1::char_traits<char> >(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, char const*, unsigned long) in p1-f4058c.o
+      std::__1::basic_filebuf<char, std::__1::char_traits<char> >::~basic_filebuf() in p1-f4058c.o
+  "___cxa_call_unexpected", referenced from:
+      std::__1::basic_filebuf<char, std::__1::char_traits<char> >::close() in p1-f4058c.o
+      std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf() in p1-f4058c.o
+  "___cxa_end_catch", referenced from:
+      std::__1::basic_ostream<char, std::__1::char_traits<char> >& std::__1::__put_character_sequence<char, std::__1::char_traits<char> >(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, char const*, unsigned long) in p1-f4058c.o
+      std::__1::basic_filebuf<char, std::__1::char_traits<char> >::~basic_filebuf() in p1-f4058c.o
+  "___cxa_throw", referenced from:
+      std::__1::basic_filebuf<char, std::__1::char_traits<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int) in p1-f4058c.o
+      std::__1::basic_filebuf<char, std::__1::char_traits<char> >::sync() in p1-f4058c.o
+      std::__1::basic_filebuf<char, std::__1::char_traits<char> >::underflow() in p1-f4058c.o
+      std::__1::basic_filebuf<char, std::__1::char_traits<char> >::overflow(int) in p1-f4058c.o
+  "___gxx_personality_v0", referenced from:
+      getstring() in p1-f4058c.o
+      ___cxx_global_var_init in p1-f4058c.o
+      std::__1::basic_fstream<char, std::__1::char_traits<char> >::~basic_fstream() in p1-f4058c.o
+      std::__1::basic_ostream<char, std::__1::char_traits<char> >& std::__1::endl<char, std::__1::char_traits<char> >(std::__1::basic_ostream<char, std::__1::char_traits<char> >&) in p1-f4058c.o
+      std::__1::basic_filebuf<char, std::__1::char_traits<char> >::close() in p1-f4058c.o
+      std::__1::basic_ostream<char, std::__1::char_traits<char> >& std::__1::__put_character_sequence<char, std::__1::char_traits<char> >(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, char const*, unsigned long) in p1-f4058c.o
+      std::__1::ostreambuf_iterator<char, std::__1::char_traits<char> > std::__1::__pad_and_output<char, std::__1::char_traits<char> >(std::__1::ostreambuf_iterator<char, std::__1::char_traits<char> >, char const*, char const*, char const*, std::__1::ios_base&, char) in p1-f4058c.o
+      ...
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+NRMBP:p1 nrebhun$ clear && g++ p1.cpp -o p1.out && ./p1.out data1
+
+p1.cpp:93:26: warning: conversion from string literal to 'char *' is deprecated
+      [-Wc++11-compat-deprecated-writable-strings]
+    static char *op[] = {"***","lod","sto","***","add","sub","mul","div"};
+                         ^
+p1.cpp:93:32: warning: conversion from string literal to 'char *' is deprecated
+      [-Wc++11-compat-deprecated-writable-strings]
+    static char *op[] = {"***","lod","sto","***","add","sub","mul","div"};
+                               ^
+p1.cpp:93:38: warning: conversion from string literal to 'char *' is deprecated
+      [-Wc++11-compat-deprecated-writable-strings]
+    static char *op[] = {"***","lod","sto","***","add","sub","mul","div"};
+                                     ^
+p1.cpp:93:44: warning: conversion from string literal to 'char *' is deprecated
+      [-Wc++11-compat-deprecated-writable-strings]
+    static char *op[] = {"***","lod","sto","***","add","sub","mul","div"};
+                                           ^
+p1.cpp:93:50: warning: conversion from string literal to 'char *' is deprecated
+      [-Wc++11-compat-deprecated-writable-strings]
+    static char *op[] = {"***","lod","sto","***","add","sub","mul","div"};
+                                                 ^
+p1.cpp:93:56: warning: conversion from string literal to 'char *' is deprecated
+      [-Wc++11-compat-deprecated-writable-strings]
+    static char *op[] = {"***","lod","sto","***","add","sub","mul","div"};
+                                                       ^
+p1.cpp:93:62: warning: conversion from string literal to 'char *' is deprecated
+      [-Wc++11-compat-deprecated-writable-strings]
+    static char *op[] = {"***","lod","sto","***","add","sub","mul","div"};
+                                                             ^
+p1.cpp:93:68: warning: conversion from string literal to 'char *' is deprecated
+      [-Wc++11-compat-deprecated-writable-strings]
+    static char *op[] = {"***","lod","sto","***","add","sub","mul","div"};
+                                                                   ^
+p1.cpp:295:9: warning: conversion from string literal to 'char *' is deprecated
+      [-Wc++11-compat-deprecated-writable-strings]
+        ": operators are adjacent",
+        ^
+p1.cpp:296:9: warning: conversion from string literal to 'char *' is deprecated
+      [-Wc++11-compat-deprecated-writable-strings]
+        ": parenthesis is misplaced",
+        ^
+p1.cpp:297:9: warning: conversion from string literal to 'char *' is deprecated
+      [-Wc++11-compat-deprecated-writable-strings]
+        ": operands are adjacent",
+        ^
+p1.cpp:298:9: warning: conversion from string literal to 'char *' is deprecated
+      [-Wc++11-compat-deprecated-writable-strings]
+        ": must begin with letter",
+        ^
+p1.cpp:299:9: warning: conversion from string literal to 'char *' is deprecated
+      [-Wc++11-compat-deprecated-writable-strings]
+        ": second equal sign encountered"
+        ^
+13 warnings generated.
+You entered:
+
+a = b + c - d/e
+String with no blanks or tabs:
+
+
+a=b+c-d/e
+Internal form:
+
+ 34  3 35  4 36  5 37  7 38
+
+RPN form:
+
+abc+de/-=
+
+Generated symbolic code:
+
+    1   lod   b
+    2   add   c
+    3   sto   t.
+    4   lod   d
+    5   div   e
+    6   sto   t.+1
+    7   lod   t.
+    8   sub   t.+1
+    9   sto   a
+--------------------------------------------------------------------------------
+You entered:
+
+        x = y
+String with no blanks or tabs:
+
+
+x=y
+Internal form:
+
+ 57  3 58
+
+RPN form:
+
+xy=
+
+Generated symbolic code:
+
+    1   lod   y
+    2   sto   x
+--------------------------------------------------------------------------------
+You entered:
+
+z = y * (x - w/ (v - u))
+String with no blanks or tabs:
+
+
+z=y*(x-w/(v-u))
+Internal form:
+
+ 59  3 58  6  1 57  5 56  7  1 55  5 54  2  2
+
+RPN form:
+
+zyxwvu-/-*=
+
+Generated symbolic code:
+
+    1   lod   v
+    2   sub   u
+    3   sto   t.
+    4   lod   w
+    5   div   t.
+    6   sto   t.
+    7   lod   x
+    8   sub   t.
+    9   mul   y
+   10   sto   z
+--------------------------------------------------------------------------------
+You entered:
+
+a = a - ((b+c)*d-e)/((f-g)*h-(i-j/k))
+String with no blanks or tabs:
+
+
+a=a-((b+c)*d-e)/((f-g)*h-(i-j/k))
+Internal form:
+
+ 34  3 34  5  1  1 35  4 36  2  6 37  5 38  2  7
+  1  1 39  5 40  2  6 41  5  1 42  5 43  7 44  2
+  2
+
+RPN form:
+
+aabc+d*e-fg-h*ijk/--/-=
+
+Generated symbolic code:
+
+    1   lod   b
+    2   add   c
+    3   mul   d
+    4   sub   e
+    5   sto   t.
+    6   lod   f
+    7   sub   g
+    8   mul   h
+    9   sto   t.+1
+   10   lod   j
+   11   div   k
+   12   sto   t.+2
+   13   lod   i
+   14   sub   t.+2
+   15   sto   t.+2
+   16   lod   t.+1
+   17   sub   t.+2
+   18   sto   t.+1
+   19   lod   t.
+   20   div   t.+1
+   21   sto   t.
+   22   lod   a
+   23   sub   t.
+   24   sto   a
+--------------------------------------------------------------------------------
+You entered:
+
+a = b + c*d
+String with no blanks or tabs:
+
+
+a=b+c*d
+Internal form:
+
+ 34  3 35  4 36  6 37
+
+RPN form:
+
+abcd*+=
+
+Generated symbolic code:
+
+    1   lod   c
+    2   mul   d
+    3   add   b
+    4   sto   a
+--------------------------------------------------------------------------------
+You entered:
+
+a = b*c + d
+String with no blanks or tabs:
+
+
+a=b*c+d
+Internal form:
+
+ 34  3 35  6 36  4 37
+
+RPN form:
+
+abc*d+=
+
+Generated symbolic code:
+
+    1   lod   b
+    2   mul   c
+    3   add   d
+    4   sto   a
+--------------------------------------------------------------------------------
+You entered:
+
+a = a - b/(c - d)
+String with no blanks or tabs:
+
+
+a=a-b/(c-d)
+Internal form:
+
+ 34  3 34  5 35  7  1 36  5 37  2
+
+RPN form:
+
+aabcd-/-=
+
+Generated symbolic code:
+
+    1   lod   c
+    2   sub   d
+    3   sto   t.
+    4   lod   b
+    5   div   t.
+    6   sto   t.
+    7   lod   a
+    8   sub   t.
+    9   sto   a
+--------------------------------------------------------------------------------
+You entered:
+
+A = (A - B) / (C*(X - Y/Z)/(X - Z/(X - Y)) + (X - Y))
+String with no blanks or tabs:
+
+
+A=(A-B)/(C*(X-Y/Z)/(X-Z/(X-Y))+(X-Y))
+Internal form:
+
+  8  3  1  8  5  9  2  7  1 10  6  1 31  5 32  7
+ 33  2  7  1 31  5 33  7  1 31  5 32  2  2  4  1
+ 31  5 32  2  2
+
+RPN form:
+
+AAB-CXYZ/-*XZXY-/-/XY-+/=
+
+Generated symbolic code:
+
+    1   lod   A
+    2   sub   B
+    3   sto   t.
+    4   lod   Y
+    5   div   Z
+    6   sto   t.+1
+    7   lod   X
+    8   sub   t.+1
+    9   mul   C
+   10   sto   t.+1
+   11   lod   X
+   12   sub   Y
+   13   sto   t.+2
+   14   lod   Z
+   15   div   t.+2
+   16   sto   t.+2
+   17   lod   X
+   18   sub   t.+2
+   19   sto   t.+2
+   20   lod   t.+1
+   21   div   t.+2
+   22   sto   t.+1
+   23   lod   X
+   24   sub   Y
+   25   add   t.+1
+   26   sto   t.+1
+   27   lod   t.
+   28   div   t.+1
+   29   sto   A
+--------------------------------------------------------------------------------
+You entered:
+
+        a = b + 3*c
+String with no blanks or tabs:
+
+
+a=b+3*c
+Internal form:
+
+ 34  3 35  4  0  6 36
+
+** 5th nonblank char <3> is illegal. **
+--------------------------------------------------------------------------------
+You entered:
+
+a = -b
+String with no blanks or tabs:
+
+
+a=-b
+Internal form:
+
+ 34  3  5 35
+
+** Illegal syntax. **
+: operators are adjacent - sigma = 3, alpha = 5
+--------------------------------------------------------------------------------
+You entered:
+
+a = x +* y
+String with no blanks or tabs:
+
+
+a=x+*y
+Internal form:
+
+ 34  3 57  4  6 58
+
+** Illegal syntax. **
+: operators are adjacent - sigma = 4, alpha = 6
+--------------------------------------------------------------------------------
+You entered:
+
+a = a-b*(c-d))/(e+f)
+String with no blanks or tabs:
+
+
+a=a-b*(c-d))/(e+f)
+Internal form:
+
+ 34  3 34  5 35  6  1 36  5 37  2  2  7  1 38  4
+ 39  2
+
+** Illegal syntax. **
+
+--------------------------------------------------------------------------------
+You entered:
+
+a = =
+String with no blanks or tabs:
+
+
+a==
+Internal form:
+
+ 34  3  3
+
+** Illegal syntax. **
+: second equal sign encountered - sigma = 3, alpha = 3
+--------------------------------------------------------------------------------
+You entered:
+
+a = (b+c) (d-e)
+String with no blanks or tabs:
+
+
+a=(b+c)(d-e)
+Internal form:
+
+ 34  3  1 35  4 36  2  1 37  5 38  2
+
+** Illegal syntax. **
+: parenthesis is misplaced - sigma = 2, alpha = 1
+--------------------------------------------------------------------------------
+You entered:
+
+ab = c + d/e
+String with no blanks or tabs:
+
+
+ab=c+d/e
+Internal form:
+
+ 34 35  3 36  4 37  7 38
+
+** Illegal syntax. **
+: operands are adjacent - sigma = 8, alpha = 8
+--------------------------------------------------------------------------------
+You entered:
+
+a = b + c*d = f - g
+String with no blanks or tabs:
+
+
+a=b+c*d=f-g
+Internal form:
+
+ 34  3 35  4 36  6 37  3 39  5 40
+
+** Illegal syntax. **
+
+--------------------------------------------------------------------------------
+You entered:
+
+        e       n       d
+String with no blanks or tabs:
+
+
+end
+NRMBP:p1 nrebhun$ 

@@ -1,0 +1,28 @@
+#lang racket
+[define (negMod varA varB)
+  (cond [(> varB 0) (negMod varA (* varB -1))]
+        [(< varA varB) (negMod (- varA varB) varB)]
+        [(> varA varB) display varA]
+        [(= varA varB) display 0]
+        )
+  ]
+
+[define (mod varA varB)
+  (cond [(negative? varA) (negMod varA varB)]
+       [(negative? varB) (negMod varA varB)]
+       [(> varA varB) (mod (- varA varB) varB)]
+       [(< varA varB) display varA]
+       [(= varA varB) display 0]
+       )
+  ]
+
+[define (b2dBrain bNum dNum index)
+  ]
+
+[define (b2dIntermediary bNum dNum)
+  
+  ]
+  
+[define (b2d num)
+  (b2dBrain num
+  ]

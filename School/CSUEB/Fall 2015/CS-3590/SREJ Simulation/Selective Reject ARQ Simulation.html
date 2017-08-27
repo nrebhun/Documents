@@ -1,0 +1,398 @@
+<html style="background-color:#a0a0a0; font-family:Arial; font-size:18px;">
+	<left>
+		<h1>Selective-Reject/Selective-Repeat ARQ Simulation</h1>
+		<div>
+			Options:<br>
+			Window size: <input type="number" id="windowsize" value=8><br>
+			Packets/sec : <input type="number" id="packetsPerSecond" value=1><br>
+
+			<button onclick="start()">Begin Simulation</button><br>
+			<HR WIDTH="100%">
+
+			<ul style="width:20%; float:left;">
+				<u>Server/Client Colors</u>
+				<li style="color:#770000">
+					Acknowledge not received
+				</li>
+				<li style="color:#333333">
+					Acknowledge received
+				</li>
+				<li style="color:#777777">
+					Packet not received
+				</li>
+				<li style="color:#FF8800">
+					Packet received
+				</li>
+			</ul>
+
+			<ul style="width:20%; float:left;">
+				<u>Packet Colors</u>
+				<li style="color:#000077">
+					Packet in-transit
+				</li>
+				<li style="color:#007700">
+					Acknowledge in-transit
+				</li>
+				<li style="color:#885533">
+					Reject in-transit
+				</li>
+			</ul>
+			
+			<ul style="width:40%; float:left;">
+				<u>Additional Colors</u>
+				<li style="color:#FFFF00">
+					Buffered Packets
+				</li>
+			</ul>
+		</div>
+
+		<HR WIDTH="100%">
+		<div>
+			<u style="top:340; left:10; position:absolute; z-index:1; visibility:show;">
+				Server
+			</u>
+			<u style="top:340; left:360; position:absolute; z-index:1; visibility:show;">
+				Client
+			</u>
+		</div>
+		<br>
+	</left>
+
+	<canvas width='1000' height='800' id='canvas'></canvas>
+	
+	<script>
+	// Get the canvas
+	var canvas = document.getElementById('canvas');
+	var context;
+
+	// Entry point
+	var start = function() {
+		windowSize = document.getElementById("windowsize").value;
+		sequenceMax = windowSize - 1;
+
+		transmissionDelayMax = 60000 / (document.getElementById("packetsPerSecond").value * 60);
+		
+		if (canvas.getContext) {
+			context = canvas.getContext('2d');
+
+			// Push next y-position onto rowYPosition
+			for (var i = 0; i < 16; i++) {
+				rowYPosition.push(25 + i*50);
+			}
+			
+			for (var i = 0; i < rowYPosition.length; ++i) {
+				acknowledgeReceived.push(false);
+				packetReceived.push(false);
+				packetBuffered.push(false);
+				inWindow.push(false);
+			
+				packetYPosition.push([]);
+				packetIsActive.push([]);
+				packetStart.push([]);
+
+				acknowledgeYPosition.push([]);
+				acknowledgeIsActive.push([]);
+				acknowledgeStart.push([]);
+
+				rejectXPosition.push([]);
+				rejectIsActive.push([]);
+				rejectStart.push([]);
+			
+				for (var j = 0; j < packetsPerColumn; j++) {
+					packetYPosition[i].push(topRowXPosition);
+					packetIsActive[i].push(false);
+					packetStart[i].push(0);
+				}
+
+				for (var j = 0; j <  acknowledgesPerColumn; j++) {
+					acknowledgeYPosition[i].push(bottomRowY);
+					acknowledgeIsActive[i].push(false);
+					acknowledgeStart[i].push(0);
+				}
+
+				for (var j = 0; j < rejectsPerColumn; j++) {
+					rejectXPosition[i].push(bottomRowY);
+					rejectIsActive[i].push(false);
+					rejectStart[i].push(0);
+				}
+			}
+			animate();
+		}
+	}
+
+	var requestAnimationFrame =  
+	        window.requestAnimationFrame ||
+	        window.webkitRequestAnimationFrame ||
+	        window.mozRequestAnimationFrame ||
+	        window.msRequestAnimationFrame ||
+	        window.oRequestAnimationFrame ||
+	        function(callback)  {
+	          return setTimeout(callback, 1);
+	        };
+
+	var drawCircle = function(x, y, color) {
+		context.beginPath();	
+		context.arc(x, y, 22, 0,  2 * Math.PI);
+		context.strokeStyle = '#000000';
+		context.fillStyle = color;
+		context.fill();
+		context.stroke();
+	}
+
+	var darkRed = '#770000';
+	var orange = '#FF8800';
+	var yellow = '#FFFF00';
+	var darkGreen = '#007700';
+	var darkblue = '#000077';
+	var brown = '#885533';
+	var darkGray = '#333333';
+	var gray = '#777777';
+
+	// Recursive redraw function
+	var render = function() {
+		requestAnimationFrame(render);
+	};  
+
+	// Positioning Variables
+	var rowYPosition = []; 
+	var topRowXPosition	= 30;
+	var bottomRowY	= 375;
+
+	// Packet Variables
+	var packetsPerColumn = 20;
+	var packetYPosition = [];
+	var packetIsActive = [];
+	var packetStart = [];
+
+	// Acknowledge Variables
+	var acknowledgesPerColumn = 20;
+	var acknowledgeYPosition = [];
+	var acknowledgeIsActive = [];
+	var acknowledgeStart = [];
+
+	// Reject Variables
+	var rejectsPerColumn = 20;
+	var rejectXPosition = [];
+	var rejectIsActive = [];
+	var rejectStart = [];
+
+	// Sequence/Ordering Variables
+	var windowSize = 2;
+	var requestNum = 0;
+	var sequenceNum = 0;
+	var sequenceBase = 0;
+	var sequenceMax = windowSize - 1;
+	var transmissionDelayCounter = 0;
+	var transmissionDelayMax = 200;
+
+	// Stacks for classifying packets
+	var acknowledgeReceived = [];
+	var packetReceived = [];
+	var packetBuffered = [];
+	var inWindow = [];
+
+	var travelTime = 1000;
+
+	var lastAcknowledge = 0;
+	var rejectSend = -1
+	var requestNumSender = 0;
+	var lastSent = -1;
+
+	var animate = function()  {
+		// Mark a timestamp
+		var start = new Date().getTime();
+		var t = 0;
+
+		// Step function
+		var step = function() {
+			// Timestamp
+			var last = t;
+			t = (new Date().getTime()) - start;
+			dt = t - last;
+
+			// Sender code
+			if (sequenceNum < rowYPosition.length) {
+				if (transmissionDelayCounter <= 0) {
+					transmissionDelayCounter = transmissionDelayMax;
+
+					// Shift the window 
+					if (requestNumSender > sequenceBase) {
+						sequenceMax = sequenceMax + (requestNumSender - sequenceBase);
+						sequenceBase = requestNumSender;
+					}
+					
+					// if reject was received and haven't yet re-sent all packets before reject
+					if (requestNumSender < rejectSend) {
+						sequenceNum = requestNumSender;
+						requestNumSender++;
+					} else { // else send next unsent packet
+						sequenceNum = lastSent + 1;
+						lastSent++;
+					}
+					
+					if (sequenceNum <= sequenceMax) {
+						var packetToUse = 0;
+						for (var i = 0; i < packetsPerColumn-1; i++) {
+							if (!packetIsActive[sequenceNum][i]) {
+								packetToUse = i;
+							}
+						}
+
+						packetYPosition[sequenceNum][packetToUse] = topRowXPosition;
+						packetIsActive[sequenceNum][packetToUse] = true;
+						packetStart[sequenceNum][packetToUse] = t;
+					}
+				} else {
+					transmissionDelayCounter = transmissionDelayCounter - dt;
+				}
+			}
+
+			// Move active packets and acknowledges
+			for (var i = 0; i < rowYPosition.length; i++) {
+				for (var j = 0; j < packetsPerColumn; j++) {
+					if (packetIsActive[i][j]) {
+						packetYPosition[i][j] = topRowXPosition + ((t - packetStart[i][j])/travelTime) * (bottomRowY - topRowXPosition);
+
+						// Packet has "error" during transmission .5% chance/frame
+						if (Math.random() > 0.995) {
+							packetIsActive[i][j] = false;
+						} else {
+							// If packet reaches target...
+							if (packetYPosition[i][j] >= bottomRowY) {
+								packetIsActive[i][j] = false;
+
+								// if packet is correct, send acknowledge, and update request
+								if (i == requestNum) {
+									requestNum++;
+									packetReceived[i] = true;
+							
+									var currentAcknowledge = 0;
+									for (var k = 0; k <  acknowledgesPerColumn; k++) {
+										if (!acknowledgeIsActive[i][k]) {
+											currentAcknowledge = k;
+										}
+									}
+									acknowledgeIsActive[i][currentAcknowledge] = true;
+									acknowledgeStart[i][currentAcknowledge] = t;
+
+									for (var k = i + 1; k < rowYPosition.length; k++) {
+										if (packetBuffered[k]) {
+											packetBuffered[k] = false;
+											packetReceived[k] = true;
+											requestNum++;
+										} else {
+											break;
+										}
+									}
+								} else {	// else buffer packet & send reject
+									packetBuffered[i] = true;
+									
+									var rejectToUse = 0;
+									for (var k = 0; k < rejectsPerColumn; k++) {
+										if (!rejectIsActive[i][k]) {
+											rejectToUse = k;
+										}
+									}
+									rejectIsActive[i][rejectToUse] = true;
+									rejectStart[i][rejectToUse] = t;
+								}
+							}
+						}
+					}
+				}
+
+				for (var j = 0; j <  acknowledgesPerColumn; j++) {
+					if (acknowledgeIsActive[i][j]) {
+						acknowledgeYPosition[i][j] = bottomRowY - ((t - acknowledgeStart[i][j])/travelTime)*(bottomRowY - topRowXPosition);
+
+						// If acknowledge reaches target...
+						if (acknowledgeYPosition[i][j] <= topRowXPosition) {
+							requestNumSender = i + 1;
+							acknowledgeIsActive[i][j] = false;
+
+							for (var k = 0; k <= i; k++) {
+								acknowledgeReceived[k] = true;
+							}
+						}
+					}
+				}
+
+				for (var j = 0; j < rejectsPerColumn; j++) {
+					if (rejectIsActive[i][j]) {
+						rejectXPosition[i][j] = bottomRowY - ((t - rejectStart[i][j])/travelTime)*(bottomRowY - topRowXPosition);
+
+						// if reject reaches target, deactivate
+						if (rejectXPosition[i][j] <= topRowXPosition) {
+							rejectIsActive[i][j] = false;
+							rejectSend = i;
+							
+							for (var k = 0; k < i; k++) {
+								if (!packetReceived[k]) {
+									requestNumSender = k;
+									break;
+								}
+							}
+						}
+					}
+				}
+			}
+
+			// Clear the canvas
+			context.clearRect(0, 0, canvas.width, canvas.height);
+
+			// Draw Server nodes
+			for (var i = 0; i < rowYPosition.length; i++) {
+				var color;
+				if (acknowledgeReceived[i]) {
+					color = darkGray;
+				} else {
+					color = darkRed;
+				}
+
+				drawCircle(topRowXPosition, rowYPosition[i], color);
+			}
+
+			// Draw Client Nodes
+			for (var i = 0; i < rowYPosition.length; i++) {
+				var color;
+				if (packetReceived[i]) {
+					 color = orange;
+				} else if (packetBuffered[i]) {
+					color = yellow;
+				} else {
+					color = gray;
+				}
+				drawCircle(bottomRowY, rowYPosition[i], color);
+			}
+
+			// Draw moving packets
+			for (var i = 0; i < rowYPosition.length; i++) {
+				// Draw/move sent packet
+				for (var j = 0; j < packetsPerColumn; j++) {
+					if (packetIsActive[i][j]) {
+						drawCircle(packetYPosition[i][j], rowYPosition[i], darkblue);
+					}
+				}
+
+				// Draw/move sent acknowledge
+				for (var j = 0; j <  acknowledgesPerColumn; j++) {
+					if (acknowledgeIsActive[i][j]) {
+						drawCircle(acknowledgeYPosition[i][j], rowYPosition[i], darkGreen);
+					}
+				}
+
+				// Draw/move sent reject
+				for (var j = 0; j < rejectsPerColumn; j++) {
+					if (rejectIsActive[i][j]) {
+						drawCircle(rejectXPosition[i][j], rowYPosition[i], brown);
+					}
+				}
+			}
+			requestAnimationFrame(step);
+		};
+
+		// Begin animation
+	  	return step();
+	};
+	</script>
+</html>

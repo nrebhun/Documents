@@ -1,0 +1,44 @@
+This is a "hierarchy chart"; it shows, for each p8 function, which functions
+it calls. Not shown are the C library functions (fopen(), fprintf(), etc.;
+except that atol() is listed here since it returns a non-int.)
+
+These are not shown in the order in which they are called.
+
+
+(int)main
+    (void)parse
+	(void)closeout
+	    (void)makename
+	(void)getsymbol
+	(void)initparse
+	(void)reduce
+	    (int)comp
+	    (void)match
+		(void)gencode
+		    (int)nextr
+		    (void)emit1
+		    (void)emit2
+			(void)emit0
+		    (void)emit3
+			(void)emit0
+	(void)reportbug
+	    (void)ouch
+	(void)shift
+    (void)scan
+	(int)nexts
+	(void)baddigitstr
+	(void)delimiter
+	(void)extradot
+	(void)floatstr
+	    (long double)atold
+		(long double)tento
+	(void)illegalch
+	(void)initscan
+	    (int)hash
+	(void)intstr
+	    (long)atol
+	(void)letterstr
+	    (int)hash
+	(void)outscan
+	    (void)makename
+	    (void)ouch

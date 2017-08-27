@@ -1,0 +1,56 @@
+CS 4110			    Programming project P1
+
+You will write a computer program in C++, C, or Java which compiles simple
+assignment statements (sentences in the language P1, formally defined
+elsewhere) into an assembly language code (also specified later).
+
+More precisely your program will accomplish the following:
+
+1. Accept an input string from the keyboard or from a previously prepared
+   data file, such as the file "p1dat".
+
+2. Echo print the input string.
+
+3. Print the string with each blank and tab deleted - if resulting string is
+   "end", "enD", "eNd", "eND", "End", "EnD", "ENd", or "END", then halt.
+
+4. Print the (blank & tab-deleted) string in an internal form (defined below).
+
+5. Check for illegal characters - if one is found, then print an error message
+   and go to step 1.
+
+6. Check the string for errors - if one is found, then print an error message,
+   and go to step 1.
+
+7. Convert the string to RPN (Reverse Polish Notation), and print the result
+   in the usual (alphabetic) notation (i.e., not in the internal form).
+
+8. Generate and list appropriate assembly language code, and go to step 1.
+
+
+The internal form is as follows
+
+ ( = 1   ) = 2   = = 3   + = 4   - = 5   * = 6   / = 7
+
+ A .. Z = 8 .. 33   a .. z = 34 .. 59
+
+(See the sample P1 output for examples and suggested format.)
+
+You will turn in (before the end of the quarter)
+
+1. A brief report on an 8 1/2 in. x 11 in. sheet of paper.
+   This report will include
+   a. names of group members if a group project;
+   b. description of project (as above, for example);
+   c. discussion of which errors you detect (step 6. above),
+      and which you do not detect; i.e., what happens if your program attempts
+      to translate an illegal string into assembly language;
+   d. anything else of interest to you (or your instructor) about the project.
+
+2. Sample output from your program.
+   This will include the output from the sample statements in the file "p1dat".
+
+3. A complete, neat, commented listing of your program.
+
+Remark - algorithms will be presented in class showing how to do all of this;
+	 but you might want to try to compose your own methods.
