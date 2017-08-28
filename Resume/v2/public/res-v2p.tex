@@ -1,0 +1,95 @@
+%% start of file `res-v2.tex'.
+% Version 2.0.0
+
+\documentclass[11pt,a4paper,sans]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+% moderncv themes
+\moderncvstyle{banking}                            % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{blue}                               % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+\nopagenumbers{}                                   % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% adjust the page margins
+\usepackage[scale=0.80]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+% personal data
+\name {Nicholas}{Rebhun}
+\phone [mobile]{+1~(818)~687~8710}                   % optional, remove / comment the line if not wanted; the optional "type" of the phone can be "mobile" (default), "fixed" or "fax"
+\email {nick@nrebhun.com}                            % optional, remove / comment the line if not wanted
+\homepage {www.nrebhun.com}                          % optional, remove / comment the line if not wanted
+\social [linkedin]{nrebhun}                          % optional, remove / comment the line if not wanted
+\social [github]{nrebhun}                            % optional, remove / comment the line if not wanted
+
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+\makecvtitle
+
+\section{Experience}        % --------------------------------------------------
+
+\cventry
+{June 2016 -- Present}          {Software Engineer I}
+{Dun \& Bradstreet}             {Malibu, CA}
+{}
+{
+\begin{itemize}
+    \item Recovered 90\% of skipped regression test coverage
+    \item Implement an Acceptance testing framework for a project with no existing test coverage
+    \item Implemented a SLIM 3 API layer for a project management integration application
+    \item Initiated an architectural transition for creating a monolithic project
+    \item Collaborated with more than a dozen engineers to design and implement a multi-project, single-codebase repository, and deduplicate large quantities of code
+    \begin{itemize}
+        \item Designed and implemented supporting Continuous Integration infrastructure, using technologies such as AWS, SaltStack, and Jenkins
+        \item Mentored team on use and maintenance of continuous integration process
+    \end{itemize}
+    \item Developed a custom Jenkins agent for handling new jobs in the continuous integration process
+    \item Began front-end web development on an AngularJS product
+\end{itemize}
+}   % Description / achievements / list
+
+\cventry
+{September 2014 -- June 2016}	{Genius Bar Technician}
+{Apple Inc.}	                {Berkeley \& Santa Monica, CA}
+{}
+{
+\begin{itemize}
+    \item Facilitated free, week-long Hour of Code event in December 2015, introducing children to coding
+\end{itemize}
+}   % Description / achievements / list
+
+\cventry
+{October 2011 -- September 2012}	{Production Assistant}
+{Tic Toc Games}	{Santa Clarita \& North Hollywood, CA}
+{}
+{
+\begin{itemize}
+    \item Quality Assurance for several iOS and Android titles
+\end{itemize}
+}   % Description / achievements / list
+
+\section{Education}         % --------------------------------------------------
+\cventry{June 2016}  {B.S., Computer Science}
+        {CSU East Bay}              {Hayward, CA}               {}{}  % arguments 3 to 6 can be left empty
+
+\section{Projects}          % --------------------------------------------------
+\cvitem{nrebhun/FileSponge}                     {A tool to help keep similar projects DRY}
+\cvitem{nrebhun/AdventureAssistant}             {Utility to simplify data management for table-top RPGs such as D\&D}
+\cvitem{nrebhun/RMPScrape}                      {Research project focused on Machine Learning and Natural Language Processing}
+\cvitem{nrebhun/Earth-Krethys}                  {Submission for Ludum Dare 30, a 72-hour public game jam}
+\cvitem{nrebhun/fPrime}                         {Physics-based Arcade-style game, written in C\# with the Unity engine}
+\cvitem{FredericJacobs/LivePort-iOS}	        {Submission for Hack For Change 2012}
+
+\section{Coding Skills}     % --------------------------------------------------
+\cvdoubleitem
+{Web}               {ES6, PHP}
+{Compiled}          {Java, Groovy, C\#, C++, C}
+{Mobile}
+\cvdoubleitem
+{Scripting}         {Bash, Zshell, Python, Lua}
+{Learning}          {Swift, Go, SQL, React}
+\end{document}
+
+%% end of file `res-v2.tex'.
