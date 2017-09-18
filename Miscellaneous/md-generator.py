@@ -33,7 +33,7 @@ def linkify(filename = None):
     return result
 
 def remove_specials(input_string = None):
-    return re.sub('[/!@#$~\-\. ]', '', input_string)
+    return re.sub('[/!@#$~\-\]', '', input_string)
 
 def usage():
     path_to_file = None
