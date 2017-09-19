@@ -31,12 +31,12 @@ def assemble_header(header_content = None):
 def linkify(file_path = None, base_name = None):
     link_text = "[" + file_path + "]: "
     link_location = remove_specials(base_name).lower()
-    result = link_text + "#"+ base_name
+    result = link_text + "#"+ link_location
 
     return result
 
 def remove_specials(input_string = None):
-    return re.sub('[/!@#$~\-]', '', input_string)
+    return re.sub('[/!@#$~\-.]', '', input_string)
 
 def usage():
     if args.filepath:
