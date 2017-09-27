@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-USAGE="Usage: $ publish [opts] <pat/to/tex-file>\n\n
--h|--help\t\tShow this message.\n
+USAGE="Usage: $ publish [opts] <path/to/tex-file>\n\n
+-h|--help\t\tShow this message.
 -d|--dry-run\t\tEnable Dry Run mode.\n
 -D|-DEBUG-MODE\t\tEnable max verbosity.\n
 "
@@ -41,11 +41,11 @@ publish() {
 
   if $DRY_RUN; then
     echo ">>>> Commands:"
-    echo "mkdir $public_path"
-    echo "cp $initial_path/$base $public_filepath"
+    echo "mkdir -p $public_path"
+    echo "yes | cp -rf $initial_path/$base $public_path/"
   else
-    mkdir "$public_path"
-    cp "$initial_path/$base $public_filepath"
+    mkdir -p "$public_path"
+    cp "$initial_path/$base" "$public_filepath"
     sed -i "" "/$REDACTION_KEYWORD/d" "$public_filepath"
   fi
 
@@ -53,16 +53,15 @@ publish() {
     build "$public_filepath"
   fi
 
-  return 0
+  exit 0
 }
 
-while [[ $# -gt 0 ]]; do
-  key="$1"
+for arg in "$@"; do
 
-  case $key in
+  case $arg in
     -h|--help)
-    printf "%s" "$USAGE"
-    return 0
+    printf "$USAGE"
+    exit 0
     ;;
     -b|--build)
     BUILD=true
@@ -77,7 +76,7 @@ while [[ $# -gt 0 ]]; do
     echo "DEBUG MODE ENABLED."
     ;;
     *)
-        publish "$key"
+        publish "$arg"
     ;;
   esac
 done
