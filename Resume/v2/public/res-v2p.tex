@@ -1,5 +1,5 @@
 %% start of file `res-v2.tex'.
-% Version 2.0.0
+% Version 2.1.0
 
 \documentclass[11pt,a4paper,sans]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
 
@@ -37,16 +37,20 @@
 {}
 {
 \begin{itemize}
+    \item Created a new version of D\&B's primary customer acquisition webapp
+    \begin{itemize}
+        \item Implemented React/Redux frontend and Express/Node backend
+        \item Implemented infrastructure using SaltStack and AWS
+    \end{itemize}
     \item Collaborated with cross-functional teams to design and implement a multi-project, single-codebase repository, deduplicating large quantities of code
     \begin{itemize}
         \item Initiated architectural transition for creating a monolithic project
-        \item Designed and implemented supporting Continuous Integration infrastructure, using technologies such as SaltStack \& Jenkins
+        \item Designed and implemented supporting Continuous Integration infrastructure using Jenkins
         \item Trained Automation and Web Dev teams on use and maintenance of new Continuous Integration infrastructure
     \end{itemize}
+    \item Developed a specialized Jenkins agent for handling new jobs in the Continuous Integration process
     \item Implemented an acceptance testing framework for a project with no existing test coverage
     \item Implemented a SLIM 3 API layer to integrate an internal tool with JIRA
-    \item Developed a specialized Jenkins agent for handling new jobs in the Continuous Integration process
-    \item Began full-stack web development on a ReactJS product
 \end{itemize}
 }   % Description / achievements / list
 
@@ -85,11 +89,11 @@
 
 \section{Coding Skills}     % --------------------------------------------------
 \cvdoubleitem
-{Web}               {ES6, PHP, HTML, CSS}
+{Web}               {ES6, PHP, HTML, React, Node}
 {Compiled}          {Java, Groovy, C\#, C++, C}
 \cvdoubleitem
-{Scripting}         {Bash, Zshell, Python, Lua}
-{Learning}          {Swift, Go, SQL, React}
+{Scripting}         {Bash, Python, Lua}
+{Learning}          {Swift, Go, SQL, CSS}
 \end{document}
 
 %% end of file `res-v2.tex'.
